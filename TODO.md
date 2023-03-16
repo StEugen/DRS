@@ -3,8 +3,8 @@
 ## Backend
 
 1. Make hardware and cabinets sent to frontend
-2. Make registration for users
-3. Make Login for users
+2. ~~Make registration for users~~
+3. ~~Make Login for users~~
 4. Setup comments in backend and db
     - details: make model, and make it available in admin panel
 5. Set Up API
@@ -32,6 +32,6 @@
 
 ## Tests
 
-1. Write tests for registration
-2. Write tests for login
+1. ~~Write tests for registration~~
+2. ~~Write tests for login~~
 3. Write tests for comments
