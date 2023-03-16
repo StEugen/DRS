@@ -8,7 +8,7 @@
 4. Setup comments in backend and db
     - details: make model, and make it available in admin panel
 5. Set Up API
-
+6. Customize admin panel
 
 
 ## Frontend
