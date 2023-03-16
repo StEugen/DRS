@@ -9,6 +9,8 @@
     - details: make model, and make it available in admin panel
 5. Set Up API
 6. Customize admin panel
+7. ~~Make a comments serializer and route~~
+8. Make cabinets and hardware serializer and route
 
 
 ## Frontend
@@ -23,6 +25,7 @@
 8. ~~Write a theme~~ 
 9. Make a Login and registration pages
 10. ~~Routes made~~
+11. Make a logout
 
 
 
@@ -34,4 +37,4 @@
 
 1. ~~Write tests for registration~~
 2. ~~Write tests for login~~
-3. Write tests for comments
+3. ~~Write tests for comments~~

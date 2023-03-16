@@ -68,3 +68,24 @@ class LoginViewTest(TestCase):
             content_type='application/json'
         )
         self.assertEqual(response.status_code, status.HTTP_401_UNAUTHORIZED)
+
+
+class CommentTests(APITestCase):
+    def setUp(self):
+        self.user = User.objects.create_user(
+            username='testuser', email='testuser@test.com', password='testpassword'
+        )
+        self.client.force_authenticate(user=self.user)
+
+    def test_create_valid_comment(self):
+        data = {'text': 'test comment', 'user': self.user.id}
+        url = reverse('create-comment')
+        self.client.force_authenticate(user=self.user)
+        response = self.client.post(url, data)
+        self.assertEqual(response.status_code, status.HTTP_201_CREATED)
+
+    def test_create_invalid_comment(self):
+        data = {} 
+        url = reverse('create-comment')
+        response = self.client.post(url, data)
+        self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
