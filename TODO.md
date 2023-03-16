@@ -14,7 +14,7 @@
 ## Frontend
 
 1. ~~Make a prototype~~ (<a href='https://github.com/StEugen/hardwareList'>hardwareList repository</a>)
-2. Rewrite public/manifest.json and public/index.html
+2. ~~Rewrite public/manifest.json and public/index.html~~
 3. ~~Write a Header component~~
 4. ~~Write a MainWrapper component~~
 5. Write a Table component
