@@ -1,3 +1,6 @@
 from django.contrib import admin
+from .models import cabinets, Hardware, Comment
 
-# Register your models here.
+admin.site.register(Comment)
+admin.site.register(cabinets)
+admin.site.register(Hardware)

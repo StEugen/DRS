@@ -5,7 +5,7 @@
 1. Make hardware and cabinets sent to frontend
 2. ~~Make registration for users~~
 3. ~~Make Login for users~~
-4. Setup comments in backend and db
+4. ~~Setup comments, cabinets and hardware in backend and db~~
     - details: make model, and make it available in admin panel
 5. Set Up API
 6. Customize admin panel
