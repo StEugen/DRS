@@ -11,6 +11,7 @@
 6. ~~Customize admin panel~~
 7. ~~Make a comments serializer and route~~
 8. Make cabinets and hardware serializer and route
+9. Add Faculty model and serializer
 
 
 ## Frontend
