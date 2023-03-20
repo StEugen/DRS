@@ -21,6 +21,10 @@ from data.views import CreateUserView, LoginView, CommentCreateView, CommentList
 
 router = routers.DefaultRouter()
 
+admin.site.site_header = 'Admin panel'
+admin.site.index_title = 'Admin panel'
+admin.site.site_title = 'DRS'
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
