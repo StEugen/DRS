@@ -8,7 +8,7 @@
 4. ~~Setup comments, cabinets and hardware in backend and db~~
     - details: make model, and make it available in admin panel
 5. Set Up API
-6. Customize admin panel
+6. ~~Customize admin panel~~
 7. ~~Make a comments serializer and route~~
 8. Make cabinets and hardware serializer and route
 
