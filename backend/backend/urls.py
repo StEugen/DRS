@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
 from data import views
-from data.views import CreateUserView, LoginView, CommentCreateView, CommentListView
+from data.views import CreateUserView, LoginView, CommentCreateView, CommentListView, HardwareDetail, HardwareList, FacultyDetail, FacultyList, CabinetDetail, CabinetList
 
 router = routers.DefaultRouter()
 
@@ -32,4 +32,7 @@ urlpatterns = [
     path('api/login/', LoginView.as_view(), name="login"),
     path('api/comments/', CommentListView.as_view(), name='list-comment'),
     path('api/comments/create/', CommentCreateView.as_view(), name='create-comment'),
+    path('api/hardwarelist/', HardwareList.as_view(), name='list-hardware'),
+    path('api/facultylist/', FacultyList.as_view(), name='list-faculty'),
+    path('api/cabinetslist/', CabinetList.as_view(), name='list-cabinets')
 ]
