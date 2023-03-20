@@ -10,8 +10,9 @@
 5. Set Up API
 6. ~~Customize admin panel~~
 7. ~~Make a comments serializer and route~~
-8. Make cabinets and hardware serializer and route
-9. Add Faculty model and serializer
+8. ~~Make cabinets and hardware serializer~~
+9. ~~Add Faculty model and serializer~~
+10. Make route for faculty, cabinets and hardware for getting items with id
 
 
 ## Frontend
