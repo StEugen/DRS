@@ -6,8 +6,8 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework.permissions import IsAuthenticated
 
-from .serializers import UserSerializer, CommentSerializer
-from .models import Comment
+from .serializers import UserSerializer, CommentSerializer, HardwareSerializer, FacultySerializer, CabinetsSerializer
+from .models import Comment, Faculty, cabinets, Hardware
 
 
 
@@ -46,3 +46,31 @@ class CommentListView(generics.ListAPIView):
     serializer_class = CommentSerializer
 
 
+class HardwareList(generics.ListCreateAPIView):
+    queryset = Hardware.objects.all()
+    serializer_class = HardwareSerializer
+
+
+class HardwareDetail(generics.ListCreateAPIView):
+    queryset = Hardware.objects.all()
+    serializer_class = HardwareSerializer
+
+
+class FacultyList(generics.ListCreateAPIView):
+    queryset = Faculty.objects.all()
+    serializer_class = FacultySerializer
+
+
+class FacultyDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Faculty.objects.all()
+    serializer_class = FacultySerializer
+
+
+class CabinetList(generics.ListCreateAPIView):
+    queryset = cabinets.objects.all()
+    serializer_class = CabinetsSerializer
+
+
+class CabinetDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = cabinets.objects.all()
+    serializer_class = CabinetsSerializer

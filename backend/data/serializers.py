@@ -1,7 +1,7 @@
 from rest_framework import serializers
 from rest_framework.validators import UniqueValidator
 from django.contrib.auth.models import User
-from .models import Comment
+from .models import Comment, Faculty, cabinets, Hardware
 
 class UserSerializer(serializers.ModelSerializer):
     email = serializers.EmailField(
@@ -30,3 +30,21 @@ class CommentSerializer(serializers.ModelSerializer):
     class Meta:
         model = Comment
         fields = "__all__" 
+
+
+class FacultySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Faculty
+        fields = "__all__"
+
+
+class HardwareSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Hardware
+        fields = "__all__"
+
+
+class CabinetsSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = cabinets
+        fields = "__all__"

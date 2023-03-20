@@ -19,8 +19,16 @@ class Hardware(models.Model):
         return self.hardware_name
 
 
+class Faculty(models.Model):
+    name = models.CharField(max_length=255, unique=True)
+
+    def __str__(self):
+        return self.name
+
+
 class cabinets(models.Model):
     cabinet = models.TextField(unique=True, null=False)
+    faculty = models.ForeignKey(Faculty, on_delete=models.CASCADE, related_name='cabinets')
 
     def __str__(self):
         return self.cabinet
