@@ -2,7 +2,7 @@
 
 ## Backend
 
-1. Make hardware and cabinets sent to frontend
+1. ~~Make hardware and cabinets sent to frontend~~
 2. ~~Make registration for users~~
 3. ~~Make Login for users~~
 4. ~~Setup comments, cabinets and hardware in backend and db~~
@@ -12,7 +12,7 @@
 7. ~~Make a comments serializer and route~~
 8. ~~Make cabinets and hardware serializer~~
 9. ~~Add Faculty model and serializer~~
-10. Make route for faculty, cabinets and hardware for getting items with id
+10. ~~Make route for faculty, cabinets and hardware for getting items with id~~
 
 
 ## Frontend
