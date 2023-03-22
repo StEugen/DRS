@@ -28,7 +28,7 @@ class Faculty(models.Model):
 
 class cabinets(models.Model):
     cabinet = models.TextField(unique=True, null=False)
-    faculty = models.ForeignKey(Faculty, on_delete=models.CASCADE, related_name='cabinets')
+    faculty = models.ForeignKey(Faculty, on_delete=models.CASCADE, related_name='cabinets', null=True, default=None)
 
     def __str__(self):
         return self.cabinet
