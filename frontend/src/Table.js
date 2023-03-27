@@ -32,8 +32,8 @@ export default function Table(props) {
       <MuiTable aria-label="simple table" className={classes.table}>
         <TableHead>
           <TableRow>
-            <TableCell>id:</TableCell>
-            <TableCell>Название</TableCell>
+            <TableCell></TableCell>
+            <TableCell></TableCell>
           </TableRow>
         </TableHead>
         <TableBody>

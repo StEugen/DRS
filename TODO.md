@@ -25,9 +25,10 @@
 6. Write a Comment component
 7. ~~Write a Footer component~~
 8. ~~Write a theme~~ 
-9. Make a Login and registration pages
+9. ~~Make a Login and registration pages~~
 10. ~~Routes made~~
 11. Make a logout
+12. Make a List (with faculties and cabinets) component
 
 
 
