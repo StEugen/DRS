@@ -13,6 +13,7 @@
 8. ~~Make cabinets and hardware serializer~~
 9. ~~Add Faculty model and serializer~~
 10. ~~Make route for faculty, cabinets and hardware for getting items with id~~
+11. ~~Make Logout~~
 
 
 ## Frontend

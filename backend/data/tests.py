@@ -1,11 +1,14 @@
 from django.test import TestCase, Client
 from django.urls import reverse
-from django.contrib.auth.models import User
+from django.contrib.auth.models import User, AnonymousUser
+from django.test import RequestFactory
 
 from rest_framework import status
 from rest_framework.test import APIClient, APITestCase
+from rest_framework.permissions import IsAuthenticated
 
 from .serializers import UserSerializer
+from .views import LogoutView
 
 import json
 
@@ -89,3 +92,24 @@ class CommentTests(APITestCase):
         url = reverse('create-comment')
         response = self.client.post(url, data)
         self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
+
+
+class LogoutViewTestCase(APITestCase):
+    def setUp(self):
+        self.user = User.objects.create_user(
+            username='testuser', email='testuser@example.com', password='testpass'
+        )
+        self.client.login(username='testuser', password='testpass')
+
+    def test_logout(self):
+        response = self.client.post('/api/logout/')
+        self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
+
+    def test_logout_unauthenticated(self):
+        self.client.logout()
+        response = self.client.post('/api/logout/')
+        self.assertEqual(response.status_code, status.HTTP_403_FORBIDDEN)
+
+    def tearDown(self):
+        self.client.logout()
+        self.user.delete()
