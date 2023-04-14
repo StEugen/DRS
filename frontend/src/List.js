@@ -7,12 +7,12 @@ export default function List(props) {
     const [cabinets, setCabinets] = useState({});
 
     useEffect(() => {
-        axios.get('/api/facultylist')
+        axios.get('/api/facultylist/')
             .then(response => setFaculties(response.data));
     }, []);
 
     useEffect(() => {
-        axios.get('/api/cabinetslist')
+        axios.get('/api/cabinetslist/')
             .then(response => {
                 const groupedCabinets = {};
                 response.data.forEach(cabinet => {
