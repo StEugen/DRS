@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Button, Typography } from '@material-ui/core';
+import { Button, Typography, Box } from '@material-ui/core';
+import { styled } from '@mui/system';
 
 export default function List(props) {
     const [faculties, setFaculties] = useState([]);
@@ -31,11 +32,11 @@ export default function List(props) {
     }, [faculties]);
 
     return (
-      <>
+      <Box>
         {faculties.map(faculty => (
             <div key={faculty.id}>
                 <Typography>
-                    {faculty.name}
+                    {faculty.name} 
                 </Typography>
                 {cabinets[faculty.name] &&
                     cabinets[faculty.name].map(cabinet => (
@@ -44,6 +45,6 @@ export default function List(props) {
                 }
             </div>
         ))}
-      </>
+      </Box>
     )
 }

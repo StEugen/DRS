@@ -32,7 +32,7 @@ admin.site.site_title = 'DRS'
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
-    path('api/register/', CreateUserView.as_view(), name='register'),
+    #path('api/register/', CreateUserView.as_view(), name='register'),
     path('api/login/', LoginView.as_view(), name="login"),
     path('api/logout/', LogoutView.as_view(), name='logout'),
     path('api/comments/', CommentListView.as_view(), name='list-comment'),
