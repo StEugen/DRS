@@ -1,4 +1,3 @@
-import Table from './Table'
 import List from './List'
 
 

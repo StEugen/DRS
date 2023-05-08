@@ -2,11 +2,13 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Button, Typography, Box } from '@material-ui/core';
 import { styled } from '@mui/system';
+import Table from './Table.js'
 
 export default function List(props) {
     const [faculties, setFaculties] = useState([]);
     const [cabinets, setCabinets] = useState({});
-
+    const [selectedCabinet, setSelectedCabinet] = useState("");
+    const [selectedFaculty, setSelectedFaculty] = useState("");
     useEffect(() => {
         axios.get('/api/facultylist/')
             .then(response => setFaculties(response.data));
@@ -40,11 +42,28 @@ export default function List(props) {
                 </Typography>
                 {cabinets[faculty.name] &&
                     cabinets[faculty.name].map(cabinet => (
-                        <Button key={cabinet.id}>{cabinet.cabinet}</Button>
+                        <Button 
+                            key={cabinet.id}
+                            onClick={() => {
+                                setSelectedCabinet(cabinet);
+                                setSelectedFaculty(faculty);
+                            }}
+                            
+                        >
+                            {cabinet.cabinet}
+                        </Button>
                     ))
                 }
             </div>
         ))}
+        {setSelectedCabinet && (
+            <Box>
+                <Table 
+                    cabinet={selectedCabinet} 
+                    faculty={selectedFaculty}
+                />
+            </Box>
+        )}
       </Box>
     )
 }
