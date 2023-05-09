@@ -22,14 +22,16 @@
 2. ~~Rewrite public/manifest.json and public/index.html~~
 3. ~~Write a Header component~~
 4. ~~Write a MainWrapper component~~
-5. Write a Table component
-6. Write a Comment component
+5. ~~Write a Table component~~
+6. ~~Write a Comment component~~
 7. ~~Write a Footer component~~
 8. ~~Write a theme~~ 
 9. ~~Make a Login and registration pages~~
 10. ~~Routes made~~
 11. Make a logout
-12. Make a List (with faculties and cabinets) component
+12. ~~Make a List (with faculties and cabinets) component~~
+13. Make Search component
+14. Every unlogged in user shoud go to log in page
 
 
 

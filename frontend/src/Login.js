@@ -22,8 +22,10 @@ export default function Login(props) {
     const body = { username, password };
     axios.post(endpoint, body, { headers: { 'Content-Type': 'application/json' } })
       .then((response) => {
+      console.log(response)
         if (response.status === 200) {
-          localStorage.setItem('token', response.data.token);
+          localStorage.setItem('token', response.data.access_token);
+          console.log(response.data.token)
           history('/');
         }else{
           throw new Error('Response status not 200');

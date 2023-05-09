@@ -19,8 +19,8 @@ from rest_framework import routers
 from data import views
 from data.views import (
     CreateUserView, LoginView, CommentCreateView, 
-    CommentListView, HardwareList, FacultyList, 
-    CabinetList, LogoutView
+    CommentListView, CommentDeleteView, HardwareList, FacultyList, 
+    CabinetList, LogoutView, MyTokenObtainPairView, MyTokenRefreshView
 )
 
 router = routers.DefaultRouter()
@@ -32,11 +32,14 @@ admin.site.site_title = 'DRS'
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
+    path('api/token/', MyTokenObtainPairView.as_view(), name='token_obtain_pair'),
+    path('api/token/refresh/', MyTokenRefreshView.as_view(), name='token_refresh'),
     #path('api/register/', CreateUserView.as_view(), name='register'),
     path('api/login/', LoginView.as_view(), name="login"),
     path('api/logout/', LogoutView.as_view(), name='logout'),
     path('api/comments/', CommentListView.as_view(), name='list-comment'),
     path('api/comments/create/', CommentCreateView.as_view(), name='create-comment'),
+    path('api/comments/<int:pk>/delete', CommentDeleteView.as_view(), name='delete-comment'),
     path('api/hardwarelist/', HardwareList.as_view(), name='list-hardware'),
     path('api/facultylist/', FacultyList.as_view(), name='list-faculty'),
     path('api/cabinetslist/', CabinetList.as_view(), name='list-cabinets')

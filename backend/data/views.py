@@ -5,11 +5,18 @@ from rest_framework import viewsets, status, generics, authentication, permissio
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework.permissions import IsAuthenticated
+from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
+from rest_framework_simplejwt.tokens import RefreshToken
 
-from .serializers import UserSerializer, CommentSerializer, HardwareSerializer, FacultySerializer, CabinetsSerializer
+from .serializers import UserSerializer, CommentSerializer, HardwareSerializer, FacultySerializer, CabinetsSerializer, MyTokenObtainPairSerializer
 from .models import Comment, Faculty, cabinets, Hardware
 
 
+class MyTokenObtainPairView(TokenObtainPairView):
+    serializer_class = MyTokenObtainPairSerializer
+
+class MyTokenRefreshView(TokenRefreshView):
+    pass
 
 
 class CreateUserView(generics.CreateAPIView):
@@ -27,7 +34,11 @@ class LoginView(APIView):
 
         if user:
             login(request, user)
-            return Response(status=status.HTTP_200_OK)
+            refresh = RefreshToken.for_user(user)
+            return Response({
+                'access_token': str(refresh.access_token),
+                'refresh_token': str(refresh)
+            }, status=status.HTTP_200_OK)
         else:
             return Response(status=status.HTTP_401_UNAUTHORIZED)
 
@@ -53,15 +64,23 @@ class CommentListView(generics.ListAPIView):
     queryset = Comment.objects.all()
     serializer_class = CommentSerializer
 
+class CommentDeleteView(generics.DestroyAPIView):
+    queryset = Comment.objects.all()
+    serializer_class = CommentSerializer
+    permission_classes = [IsAuthenticated]
+
+    def get_object(self):
+        queryset = self.get_queryset()
+        obj = queryset.filter(user=self.request.user, pk=self.kwargs["pk"]).first()
+        return obj
+
 
 class HardwareList(generics.ListCreateAPIView):
     queryset = Hardware.objects.all()
     serializer_class = HardwareSerializer
 
 
-class HardwareDetail(generics.ListCreateAPIView):
-    queryset = Hardware.objects.all()
-    serializer_class = HardwareSerializer
+
 
 
 class FacultyList(generics.ListCreateAPIView):
@@ -79,6 +98,4 @@ class CabinetList(generics.ListCreateAPIView):
     serializer_class = CabinetsSerializer
 
 
-class CabinetDetail(generics.RetrieveUpdateDestroyAPIView):
-    queryset = cabinets.objects.all()
-    serializer_class = CabinetsSerializer
+
