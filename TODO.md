@@ -30,13 +30,16 @@
 10. ~~Routes made~~
 12. ~~Make a List (with faculties and cabinets) component~~
 13. ~~Make Search component~~
-14. Every unlogged in user shoud go to log in page
+14. ~~Every unlogged in user shoud go to log in page~~
 
 
 
 ## General
 
 1. Make project in docker
+
+## Bugs
+1. Small bug, if user isnot logged in => redirects to /auth, but if he enters credentials, he isnot redirected to "/", if manually navigate to /auth, everything is fine (somehow, connected to history(), ig)
 
 ## Tests
 

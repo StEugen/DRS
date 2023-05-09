@@ -1,17 +1,26 @@
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, Navigate } from "react-router-dom";
 import { BrowserRouter } from 'react-router-dom';
 import Home from './Home';
 import Login from "./Login";
 import Search from './Search';
 
-export default function AppRoutes(props) {
-    return (
-      <BrowserRouter>
-        <Routes>
-          <Route exact path={"/"} element={<Home />} />
-          <Route exact path={"/auth"} element={<Login />} />
-          <Route exact path={"/search"} element={<Search />} />
-        </Routes>
-      </BrowserRouter>
-    );
+function checkToken() {
+  const token = localStorage.getItem('token');
+  return !!token;
 }
+
+export default function AppRoutes(props) {
+  const isLoggedIn = checkToken();
+  
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={isLoggedIn ? <Home /> : <Navigate to="/auth" />} />
+        <Route path="/auth" element={isLoggedIn ? <Navigate to="/" /> : <Login />} />
+        <Route path="/search" element={isLoggedIn ? <Search /> : <Navigate to="/auth" />} />
+      </Routes>
+    </BrowserRouter>
+  );
+}
+
+
