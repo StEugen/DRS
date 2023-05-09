@@ -2,6 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import { BrowserRouter } from 'react-router-dom';
 import Home from './Home';
 import Login from "./Login";
+import Search from './Search';
 
 export default function AppRoutes(props) {
     return (
@@ -9,6 +10,7 @@ export default function AppRoutes(props) {
         <Routes>
           <Route exact path={"/"} element={<Home />} />
           <Route exact path={"/auth"} element={<Login />} />
+          <Route exact path={"/search"} element={<Search />} />
         </Routes>
       </BrowserRouter>
     );

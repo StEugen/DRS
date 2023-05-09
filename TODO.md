@@ -28,9 +28,8 @@
 8. ~~Write a theme~~ 
 9. ~~Make a Login and registration pages~~
 10. ~~Routes made~~
-11. Make a logout
 12. ~~Make a List (with faculties and cabinets) component~~
-13. Make Search component
+13. ~~Make Search component~~
 14. Every unlogged in user shoud go to log in page
 
 
