@@ -20,6 +20,18 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Table({ cabinet, faculty }) {
   const classes = useStyles();
+
+  const [hardwareList, setHardwareList] = useState([]);
+
+  useEffect(() => {
+    fetch('/api/hardwarelist/')
+      .then(response => response.json())
+      .then(data => setHardwareList(data))
+      .catch(error => console.error(error));
+  }, []);
+
+  const filteredHardwareList = hardwareList.filter(hardware => hardware.cabinet === cabinet.id);
+
   return (
     <TableContainer 
       component={Paper}
@@ -30,11 +42,20 @@ export default function Table({ cabinet, faculty }) {
           <TableRow>
             <TableCell>{faculty.name}</TableCell>
             <TableCell>{cabinet.cabinet}</TableCell>
+            <TableCell>Additional info</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
+          {filteredHardwareList.map(hardware => (
+            <TableRow key={hardware.id}>
+              <TableCell>{hardware.hardware_name}</TableCell>
+              <TableCell>{hardware.hardware_number}</TableCell>
+              <TableCell>{hardware.comment}</TableCell>
+            </TableRow>
+          ))}
         </TableBody>
       </MuiTable>
     </TableContainer>
   );
 }
+
