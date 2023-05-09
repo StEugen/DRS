@@ -5,23 +5,16 @@ from rest_framework import viewsets, status, generics, authentication, permissio
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework.permissions import IsAuthenticated
-from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 from rest_framework_simplejwt.tokens import RefreshToken
 
-from .serializers import UserSerializer, CommentSerializer, HardwareSerializer, FacultySerializer, CabinetsSerializer, MyTokenObtainPairSerializer
+from .serializers import CommentSerializer, HardwareSerializer, FacultySerializer, CabinetsSerializer
 from .models import Comment, Faculty, cabinets, Hardware
 
 
-class MyTokenObtainPairView(TokenObtainPairView):
-    serializer_class = MyTokenObtainPairSerializer
-
-class MyTokenRefreshView(TokenRefreshView):
-    pass
-
-
-class CreateUserView(generics.CreateAPIView):
-    queryset = User.objects.all()
-    serializer_class = UserSerializer
+# Registration but there's no need in it
+#class CreateUserView(generics.CreateAPIView):
+#    queryset = User.objects.all()
+#    serializer_class = UserSerializer
 
 
 class LoginView(APIView):
@@ -78,9 +71,6 @@ class CommentDeleteView(generics.DestroyAPIView):
 class HardwareList(generics.ListCreateAPIView):
     queryset = Hardware.objects.all()
     serializer_class = HardwareSerializer
-
-
-
 
 
 class FacultyList(generics.ListCreateAPIView):

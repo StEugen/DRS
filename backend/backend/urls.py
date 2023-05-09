@@ -18,9 +18,9 @@ from django.urls import path, include
 from rest_framework import routers
 from data import views
 from data.views import (
-    CreateUserView, LoginView, CommentCreateView, 
+    LoginView, CommentCreateView, 
     CommentListView, CommentDeleteView, HardwareList, FacultyList, 
-    CabinetList, LogoutView, MyTokenObtainPairView, MyTokenRefreshView
+    CabinetList, LogoutView
 )
 
 router = routers.DefaultRouter()
@@ -32,9 +32,6 @@ admin.site.site_title = 'DRS'
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
-    path('api/token/', MyTokenObtainPairView.as_view(), name='token_obtain_pair'),
-    path('api/token/refresh/', MyTokenRefreshView.as_view(), name='token_refresh'),
-    #path('api/register/', CreateUserView.as_view(), name='register'),
     path('api/login/', LoginView.as_view(), name="login"),
     path('api/logout/', LogoutView.as_view(), name='logout'),
     path('api/comments/', CommentListView.as_view(), name='list-comment'),
