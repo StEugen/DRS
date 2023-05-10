@@ -18,7 +18,7 @@ This site is made for use inside the company i work in, it's only purpose is to 
 	- src/ - folder which contains all the compiled files of project
 - LICENCE - Apache Licence
 - TODO.md - list of what should be done 
-- REACT_API.md - file which describes api
+- REST_API.md - file which describes api
 
 
 # To start a project
