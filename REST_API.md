@@ -31,7 +31,7 @@ route: api/comments/create <br>
 method: POST <br>
 gets: [comment, user optional] <br>
 returns: <br>
-description: used for creating comments
+description: used for creating comments <br>
 <br>
 route: api/comments/:id/delete <br>
 method: DELETE <br>
