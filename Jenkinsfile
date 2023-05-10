@@ -7,5 +7,12 @@ pipeline {
       }
     }
 
+    stage('Unit test #1') {
+      steps {
+        sh '''cd backend
+python3 manage.py test'''
+      }
+    }
+
   }
 }
