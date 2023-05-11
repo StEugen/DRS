@@ -1,15 +1,18 @@
 pipeline {
   agent any
   stages {
-    stage('Create DB') {
+    stage('Git') {
       steps {
         echo 'create db'
+        git(url: 'https://github.com/StEugen/DRS', branch: 'main')
       }
     }
 
-    stage('Git') {
+    stage('Create env') {
       steps {
-        git(url: 'https://github.com/StEugen/DRS', branch: 'main')
+        sh '''touch .env
+echo "HOST=46.151.28.239" >> .env
+'''
       }
     }
 
