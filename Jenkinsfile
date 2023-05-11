@@ -10,7 +10,8 @@ pipeline {
 
     stage('Create env') {
       steps {
-        sh '''touch .env
+        sh '''cd backend
+touch .env
 echo "HOST=46.151.28.239" >> .env
 '''
       }
