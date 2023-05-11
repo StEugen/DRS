@@ -22,8 +22,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 ## for docker
-SECRET_KEY = os.getenv('SECRET_KEY')
-#SECRET_KEY = 'django-insecure-+0tb$cjn87d+=sl01vx4^1wic*btk&gcn5l-3wx*o%zphvpvvp'
+#SECRET_KEY = os.getenv('SECRET_KEY')
+SECRET_KEY = 'django-insecure-+0tb$cjn87d+=sl01vx4^1wic*btk&gcn5l-3wx*o%zphvpvvp'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 ## For production
