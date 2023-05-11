@@ -22,13 +22,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 ## for docker
-##SECRET_KEY = os.getenv('SECRET_KEY')
-SECRET_KEY = 'django-insecure-+0tb$cjn87d+=sl01vx4^1wic*btk&gcn5l-3wx*o%zphvpvvp'
+SECRET_KEY = os.getenv('SECRET_KEY')
+#SECRET_KEY = 'django-insecure-+0tb$cjn87d+=sl01vx4^1wic*btk&gcn5l-3wx*o%zphvpvvp'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 ## For production
 #DEBUG = os.getenv('DEBUG')
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -89,27 +89,27 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 ## for docker container
-#DATABASES = {
-#    'default': {
-#        'ENGINE': 'django.db.backends.postgresql',
-#        'NAME': 'backend',
-#        'USER': 'admin',
-#        'PASSWORD': 'password',
-#        'HOST': 'db',
-#        'PORT': ''
-#    }
-#}
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'hardware',
-        'USER': 'hard',
-        'PASSWORD': 'PASSWORD',
-        'HOST': 'localhost',
-        'PORT': '5432'
+        'NAME': 'backend',
+        'USER': 'admin',
+        'PASSWORD': 'password',
+        'HOST': 'db',
+        'PORT': ''
     }
 }
+
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.postgresql',
+#        'NAME': 'hardware',
+#        'USER': 'hard',
+#        'PASSWORD': 'PASSWORD',
+#        'HOST': 'localhost',
+#        'PORT': '5432'
+#    }
+#}
 
 
 # Password validation
