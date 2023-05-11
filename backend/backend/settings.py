@@ -98,8 +98,8 @@ DATABASES = {
         'NAME': 'backend',
         'USER': 'admin',
         'PASSWORD': 'password',
-        'HOST': os.getenv('HOST'),
-        'PORT': '5000'
+        'HOST': 'db',
+        'PORT': ''
     }
 }
 
