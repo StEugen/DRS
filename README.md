@@ -22,3 +22,11 @@ This site is made for use inside the company i work in, it's only purpose is to 
 
 
 # To start a project
+1. Install docker
+	- to install on Linux go to <a href='https://docs.docker.com/desktop/install/linux-install/'>Docker for Linux installation instruction</a> or use <a href='https://opus-5.onrender.com'>Opus-5</a> tool to generate installation script
+2. Take git repository
+	- <code>$ git clone https://github.com/StEugen/DRS.git </code>
+3. Install docker-compose tool
+	- <code>$ sudo apt install docker-compose</code>
+4. go to project folder and run <code>docker-compose up -d --build</code>
+5. You're ready to use
