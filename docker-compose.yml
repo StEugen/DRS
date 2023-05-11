@@ -1,0 +1,33 @@
+version: '3.7'
+services:
+  backend:
+    volumes:
+      - static:/static
+    env_file:
+      - .env
+    build: 
+      context: .
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+  nginx:
+    build: ./nginx
+    volumes:
+      - static:/static
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+  db:
+    image: postgres
+    environment: 
+      POSTGRES_USER: admin
+      POSTGRES_DB: backend
+      POSTGRES_PASSWORD: password
+    volumes:
+      - ~/pgdata:/var/lib/postgresql/data
+
+volumes:
+  static:
+  pgdata:

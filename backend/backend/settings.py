@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,12 +21,16 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
+## for docker
+##SECRET_KEY = os.getenv('SECRET_KEY')
 SECRET_KEY = 'django-insecure-+0tb$cjn87d+=sl01vx4^1wic*btk&gcn5l-3wx*o%zphvpvvp'
 
 # SECURITY WARNING: don't run with debug turned on in production!
+## For production
+#DEBUG = os.getenv('DEBUG')
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -82,6 +87,18 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
+
+## for docker container
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.postgresql',
+#        'NAME': 'backend',
+#        'USER': 'admin',
+#        'PASSWORD': 'password',
+#        'HOST': 'db',
+#        'PORT': ''
+#    }
+#}
 
 DATABASES = {
     'default': {
@@ -142,3 +159,5 @@ CORS_ORIGIN_WHITELIST = [
     'http://192.168.0.106:3000',
     'http://192.168.0.105'
 ]
+
+CSRF_TRUSTED_ORIGINS=['http://192.168.0.106']
