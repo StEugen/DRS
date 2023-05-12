@@ -32,3 +32,5 @@ This site is made for use inside the company i work in, it's only purpose is to 
 5. You're ready to use
 
 # Webapp design
+without Docker etc, etc...
+<img src='./img/Design.jpg />
