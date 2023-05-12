@@ -33,4 +33,4 @@ This site is made for use inside the company i work in, it's only purpose is to 
 
 # Webapp design
 without Docker etc, etc...
-<img src='./img/Design.jpg />
+<img src='./img/Design.jpg' />
