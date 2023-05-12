@@ -7,6 +7,8 @@ This site is made for use inside the company i work in, it's only purpose is to 
 - React (+MUI)
 - PostgreSQL
 - Docker
+- Jenkins
+- Nginx (as reverse proxy)
 
 # Repository overview
 - backend/ 
