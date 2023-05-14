@@ -159,8 +159,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 CORS_ORIGIN_WHITELIST = [
-    'http://192.168.0.106:3000',
-    'http://192.168.0.105'
+    'http://0.0.0.0:3000',
 ]
 
 CSRF_TRUSTED_ORIGINS=['http://192.168.0.106']
