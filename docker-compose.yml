@@ -11,6 +11,18 @@ services:
       - "8000:8000"
     depends_on:
       - db
+      
+  frontend:
+    build: ./frontend
+    volumes:
+      - ./frontend:/app
+    environment:
+      - PUBLIC_URL=http://localhost:3000
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+      
   nginx:
     build: ./nginx
     volumes:
@@ -19,6 +31,7 @@ services:
       - "80:80"
     depends_on:
       - backend
+      
   db:
     image: postgres
     environment: 
