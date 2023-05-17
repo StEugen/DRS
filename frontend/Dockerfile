@@ -1,15 +1,8 @@
-FROM node:14-alpine
-
-ENV PUBLIC_URL=http://localhost:3000
+FROM node:alpine
 
 WORKDIR /app
-
-COPY package*.json ./
+COPY . .
 
 RUN yarn install
 
-COPY . .
-
-RUN yarn build
-
-CMD [ "yarn", "start" ]
+CMD [ "yarn", "build" ]

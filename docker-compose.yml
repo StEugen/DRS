@@ -13,24 +13,21 @@ services:
       - db
       
   frontend:
-    build: ./frontend
+    build:
+      context: ./frontend
     volumes:
-      - ./frontend:/app
-    environment:
-      - PUBLIC_URL=http://localhost:3000
-    ports:
-      - "3000:3000"
-    depends_on:
-      - backend
+      - ./frontend:/app/build
       
   nginx:
     build: ./nginx
     volumes:
       - static:/static
+      - frontend:/var/www/frontend
     ports:
       - "80:80"
     depends_on:
       - backend
+      - frontend
       
   db:
     image: postgres
@@ -44,3 +41,4 @@ services:
 volumes:
   static:
   pgdata:
+  frontend:
