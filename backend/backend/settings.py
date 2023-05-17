@@ -31,7 +31,7 @@ SECRET_KEY = 'django-insecure-+0tb$cjn87d+=sl01vx4^1wic*btk&gcn5l-3wx*o%zphvpvvp
 # SECURITY WARNING: don't run with debug turned on in production!
 ## For production
 #DEBUG = os.getenv('DEBUG')
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -92,27 +92,27 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 ## for docker container
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'backend',
-        'USER': 'admin',
-        'PASSWORD': 'password',
-        'HOST': 'db',
-        'PORT': ''
-    }
-}
-
 #DATABASES = {
 #    'default': {
 #        'ENGINE': 'django.db.backends.postgresql',
-#        'NAME': 'hardware',
-#        'USER': 'hard',
-#        'PASSWORD': 'PASSWORD',
-#        'HOST': 'localhost',
-#        'PORT': '5432'
+#        'NAME': 'backend',
+#        'USER': 'admin',
+#        'PASSWORD': 'password',
+#        'HOST': 'db',
+#        'PORT': ''
 #    }
 #}
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'hardware',
+        'USER': 'hard',
+        'PASSWORD': 'PASSWORD',
+        'HOST': 'localhost',
+        'PORT': '5432'
+    }
+}
 
 
 # Password validation
@@ -149,8 +149,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STATIC_ROOT = '/static/'
 STATIC_URL = 'static/'
+STATIC_ROOT = '/static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
