@@ -19,7 +19,8 @@ services:
       - ./frontend:/app/build
       
   nginx:
-    build: ./nginx
+    build: 
+      context: ./nginx
     volumes:
       - static:/static
       - frontend:/var/www/frontend
