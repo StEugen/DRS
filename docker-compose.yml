@@ -21,6 +21,8 @@ services:
   nginx:
     build: 
       context: ./nginx
+    volumes:
+      - static:/static
     ports:
       - "80:80"
     depends_on:
