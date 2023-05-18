@@ -7,7 +7,8 @@ export default function Login(props) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const history = useNavigate();
-
+  
+  const baseUrl = `${window.location.protocol}//${window.location.host}/api`;
   const handleUsernameChange = (event) => {
     setUsername(event.target.value);
   };
@@ -18,7 +19,7 @@ export default function Login(props) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    const endpoint = '/api/login/';
+    const endpoint = '`${baseUrl}/login`';
     const body = { username, password };
     axios.post(endpoint, body, { headers: { 'Content-Type': 'application/json' } })
       .then((response) => {
