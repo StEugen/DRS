@@ -1,9 +1,12 @@
 FROM node:alpine
 
-WORKDIR /app
+WORKDIR /app/frontend
+
+COPY package.json .
+COPY yarn.lock .
+
+RUN yarn install --production
+
 COPY . .
-
-RUN yarn install
-
 
 CMD [ "yarn", "start" ]
