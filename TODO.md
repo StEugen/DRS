@@ -36,7 +36,7 @@
 
 ## General
 
-1. Make project in docker
+1. ~~Make project in docker~~
 
 ## Bugs
 1. Small bug, if user isnot logged in => redirects to /auth, but if he enters credentials, he isnot redirected to "/", if manually navigate to /auth, everything is fine (somehow, connected to history(), ig)
