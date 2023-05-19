@@ -14,7 +14,8 @@ export default function Home(props) {
       	variant="contained" 
       	color="primary"
       	style={{
-      		marginBottom: '5px'
+      		marginBottom: '5px',
+      		marginTop: '10px'
       	}}
       >
   	Go Search
