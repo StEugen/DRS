@@ -40,6 +40,7 @@
 
 ## Bugs
 1. Small bug, if user isnot logged in => redirects to /auth, but if he enters credentials, he isnot redirected to "/", if manually navigate to /auth, everything is fine (somehow, connected to history(), ig)
+2. Problem with token, it doesn't expire after some time but remains, also, because it's not expired, user can access site, but cannot create comments because token is no longer valid.
 
 ## Tests
 
