@@ -6,7 +6,8 @@ import axios from 'axios';
 export default function Login(props) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const history = useNavigate();
+  const navigate = useNavigate();
+  
   
   const handleUsernameChange = (event) => {
     setUsername(event.target.value);
@@ -22,11 +23,10 @@ export default function Login(props) {
     const body = { username, password };
     axios.post(endpoint, body, { headers: { 'Content-Type': 'application/json' } })
       .then((response) => {
-      console.log(response)
         if (response.status === 200) {
           localStorage.setItem('token', response.data.access_token);
-          console.log(response.data.token)
-          history('/');
+          navigate('/');
+          window.location.reload()
         }else{
           throw new Error('Response status not 200');
         }
