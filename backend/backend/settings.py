@@ -105,12 +105,12 @@ DATABASES = {
 
 #DATABASES = {
 #    'default': {
-#        'ENGINE': 'django.db.backends.postgresql',
-#        'NAME': 'hardware',
+#       'ENGINE': 'django.db.backends.postgresql',
+#       'NAME': 'hardware',
 #        'USER': 'hard',
 #        'PASSWORD': 'PASSWORD',
 #        'HOST': 'localhost',
-#        'PORT': '5432'
+#       'PORT': '5432'
 #    }
 #}
 
@@ -166,4 +166,4 @@ CORS_ORIGIN_WHITELIST = [
 
 CORS_ALLOW_CREDENTIALS = True
 
-CSRF_TRUSTED_ORIGINS=['http://192.168.0.106']
+CSRF_TRUSTED_ORIGINS=['http://localhost']

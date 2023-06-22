@@ -5,9 +5,11 @@ import MainWrapper from "./MainWrapper";
 import Footer from "./Footer";
 import AppRoutes from "./AppRoutes";
 
+
 function App() {
+
   return (
-    <div >
+    <div>
       <ThemeProvider theme={theme}>
         <Header />
         <MainWrapper>
@@ -20,3 +22,6 @@ function App() {
 }
 
 export default App;
+
+
+
