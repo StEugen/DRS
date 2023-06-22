@@ -92,27 +92,27 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 ## for docker container
-#DATABASES = {
-#    'default': {
-#        'ENGINE': 'django.db.backends.postgresql',
-#        'NAME': 'backend',
-#        'USER': 'admin',
-#        'PASSWORD': 'password',
-#        'HOST': 'db',
-#        'PORT': ''
-#    }
-#}
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'hardware',
-        'USER': 'hard',
-        'PASSWORD': 'PASSWORD',
-        'HOST': 'localhost',
-        'PORT': '5432'
+        'NAME': 'backend',
+        'USER': 'admin',
+        'PASSWORD': 'password',
+        'HOST': 'db',
+        'PORT': ''
     }
 }
+
+#DATABASES = {
+#    'default': {
+#       'ENGINE': 'django.db.backends.postgresql',
+#       'NAME': 'hardware',
+#        'USER': 'hard',
+#        'PASSWORD': 'PASSWORD',
+#        'HOST': 'localhost',
+#       'PORT': '5432'
+#    }
+#}
 
 
 # Password validation
