@@ -12,7 +12,7 @@ import MenuItem from '@mui/material/MenuItem';
 
 
 
-const pages = ['Login'];
+const pages = ['Logout'];
 
 export default function Header(props) {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -22,7 +22,9 @@ export default function Header(props) {
   };
 
   const handleCloseNavMenu = () => {
+    localStorage.removeItem('token');
     setAnchorElNav(null);
+    window.location.reload()
   };
 
   return (
