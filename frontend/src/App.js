@@ -5,18 +5,11 @@ import MainWrapper from "./MainWrapper";
 import Footer from "./Footer";
 import AppRoutes from "./AppRoutes";
 
+
 function App() {
-  useEffect(() => {
-    const handleBeforeUnload = () => {
-      localStorage.removeItem('token');
-    };
-    window.addEventListener('beforeunload', handleBeforeUnload);
-    return () => {
-      window.removeEventListener('beforeunload', handleBeforeUnload);
-    };
-  }, []);
+
   return (
-    <div >
+    <div>
       <ThemeProvider theme={theme}>
         <Header />
         <MainWrapper>
@@ -29,3 +22,6 @@ function App() {
 }
 
 export default App;
+
+
+
