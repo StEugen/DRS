@@ -12,7 +12,7 @@ pipeline {
       steps {
         sh '''cd backend
 touch .env
-echo "HOST=46.151.28.239" >> .env
+echo "HOST=" >> .env
 '''
       }
     }
